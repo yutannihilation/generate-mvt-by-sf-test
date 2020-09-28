@@ -81,4 +81,4 @@ write_mvt(polygon)
 
 ### Screenshot
 
-![](./screenshot.png) ([国土地理院ベクトルタイル](https://github.com/gsi-cyberjapan/vector-tile-experiment)を使用して作成)
+![](./screenshot.png) (地理院地図Vector（仮称）提供のベクトルタイルを使用して作成)
