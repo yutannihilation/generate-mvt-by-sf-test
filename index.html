@@ -25,6 +25,8 @@
 <body>
     <div id="map"></div>
     <script>
+        var baseURL = 'https://yutannihilation.github.io/generate-mvt-by-sf-test';
+
         var map = new mapboxgl.Map({
             container: 'map',
             hash: true,
@@ -43,7 +45,7 @@
             map.addSource('linestring', {
                 'type': 'vector',
                 'tiles': [
-                    './data/linestring/{z}/{x}/{y}.mvt'
+                    baseURL + '/data/linestring/{z}/{x}/{y}.mvt'
                 ],
                 'minzoom': 6,
                 'maxzoom': 14
