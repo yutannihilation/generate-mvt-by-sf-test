@@ -53,7 +53,12 @@ Generate MVT files
         dsn = file.path(data_dir, name),
         layer = name,
         driver = "MVT",
-        dataset_options = c("MINZOOM=4", "MAXZOOM=9", "TILE_EXTENSION=mvt", "COMPRESS=NO")
+        dataset_options = c(
+          "MINZOOM=4",
+          "MAXZOOM=9",
+          "TILE_EXTENSION=mvt",
+          "COMPRESS=NO"   # This is important as Mapbox GL JS doesn't handle gzipped MVT files!
+        )
       )
     }
 
