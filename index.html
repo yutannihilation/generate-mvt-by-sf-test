@@ -30,13 +30,12 @@
         var map = new mapboxgl.Map({
             container: 'map',
             hash: true,
-            style: 'https://gsi-cyberjapan.github.io/gsivectortile-mapbox-gl-js/std.json', //style.jsonへのパス
+            style: 'https://gsi-cyberjapan.github.io/gsivectortile-mapbox-gl-js/std.json',
             center: [139.767144, 35.680621],
-            zoom: 7,
+            zoom: 5,
             maxZoom: 17.99,
             minZoom: 4,
             localIdeographFontFamily: false
-            //  localIdeographFontFamily: ['MS Gothic', 'Hiragino Kaku Gothic Pro', 'sans-serif']
         });
 
         map.on('load', function () {
@@ -78,7 +77,7 @@
             map.addLayer(
                 {
                     'id': 'polygon',
-                    'type': 'line',
+                    'type': 'fill',
                     'source': 'polygon',
                     'source-layer': 'polygon', // ここは書き出した layer 名を指定する必要がある
                     'layout': {},
