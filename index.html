@@ -40,15 +40,13 @@
         });
 
         map.on('load', function () {
-            // Add Mapillary sequence layer.
-            // https://www.mapillary.com/developer/tiles-documentation/#sequence-layer
             map.addSource('linestring', {
                 'type': 'vector',
                 'tiles': [
                     baseURL + '/data/linestring/{z}/{x}/{y}.mvt'
                 ],
-                'minzoom': 6,
-                'maxzoom': 14
+                'minzoom': 4,
+                'maxzoom': 9
             });
             map.addLayer(
                 {
@@ -63,7 +61,30 @@
                     'paint': {
                         'line-opacity': 0.6,
                         'line-color': 'rgb(53, 175, 109)',
-                        'line-width': 2
+                        'line-width': 100
+                    }
+                }
+            );
+
+            // polygon
+            map.addSource('polygon', {
+                'type': 'vector',
+                'tiles': [
+                    baseURL + '/data/polygon/{z}/{x}/{y}.mvt'
+                ],
+                'minzoom': 4,
+                'maxzoom': 9
+            });
+            map.addLayer(
+                {
+                    'id': 'polygon',
+                    'type': 'line',
+                    'source': 'polygon',
+                    'source-layer': 'polygon', // ここは書き出した layer 名を指定する必要がある
+                    'layout': {},
+                    'paint': {
+                        'fill-color': '#f23',
+                        'fill-opacity': 0.8
                     }
                 }
             );
