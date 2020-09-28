@@ -1,0 +1,12 @@
+{
+  "name":"linestring",
+  "description":"",
+  "version":2,
+  "minzoom":4,
+  "maxzoom":9,
+  "center":"138.5000000,37.5000000,4",
+  "bounds":"135.0000000,35.0000000,142.0000000,40.0000000",
+  "type":"overlay",
+  "format":"pbf",
+  "json":"{\n  \"vector_layers\":[\n    {\n      \"id\":\"linestring\",\n      \"description\":\"\",\n      \"minzoom\":4,\n      \"maxzoom\":9,\n      \"fields\":{\n      }\n    }\n  ],\n  \"tilestats\":{\n    \"layerCount\":1,\n    \"layers\":[\n      {\n        \"layer\":\"linestring\",\n        \"count\":2,\n        \"geometry\":\"LineString\",\n        \"attributeCount\":0,\n        \"attributes\":[\n        ]\n      }\n    ]\n  }\n}"
+}

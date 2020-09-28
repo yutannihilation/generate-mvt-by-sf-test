@@ -1,0 +1,12 @@
+{
+  "name":"polygon",
+  "description":"",
+  "version":2,
+  "minzoom":4,
+  "maxzoom":9,
+  "center":"138.0000000,37.0000000,4",
+  "bounds":"135.0000000,34.0000000,141.0000000,40.0000000",
+  "type":"overlay",
+  "format":"pbf",
+  "json":"{\n  \"vector_layers\":[\n    {\n      \"id\":\"polygon\",\n      \"description\":\"\",\n      \"minzoom\":4,\n      \"maxzoom\":9,\n      \"fields\":{\n      }\n    }\n  ],\n  \"tilestats\":{\n    \"layerCount\":1,\n    \"layers\":[\n      {\n        \"layer\":\"polygon\",\n        \"count\":2,\n        \"geometry\":\"Polygon\",\n        \"attributeCount\":0,\n        \"attributes\":[\n        ]\n      }\n    ]\n  }\n}"
+}

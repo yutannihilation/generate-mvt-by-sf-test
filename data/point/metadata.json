@@ -1,0 +1,12 @@
+{
+  "name":"point",
+  "description":"",
+  "version":2,
+  "minzoom":4,
+  "maxzoom":9,
+  "center":"-nan,0.0000000,4",
+  "bounds":"inf,90.0000000,-inf,-90.0000000",
+  "type":"overlay",
+  "format":"pbf",
+  "json":"{\n  \"vector_layers\":[\n  ],\n  \"tilestats\":{\n    \"layerCount\":0,\n    \"layers\":[\n    ]\n  }\n}"
+}

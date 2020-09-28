@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Display a map</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script>
+        var map = new mapboxgl.Map({
+            container: 'map',
+            hash: true,
+            style: 'https://gsi-cyberjapan.github.io/gsivectortile-mapbox-gl-js/std.json', //style.jsonへのパス
+            center: [139.767144, 35.680621],
+            zoom: 15,
+            maxZoom: 17.99,
+            minZoom: 4,
+            localIdeographFontFamily: false
+            //  localIdeographFontFamily: ['MS Gothic', 'Hiragino Kaku Gothic Pro', 'sans-serif']
+        });
+
+        map.on('load', function () {
+            // Add Mapillary sequence layer.
+            // https://www.mapillary.com/developer/tiles-documentation/#sequence-layer
+            map.addSource('linestring', {
+                'type': 'vector',
+                'tiles': [
+                    './data/linestring/{z}/{x}/{y}.mvt'
+                ],
+                'minzoom': 6,
+                'maxzoom': 14
+            });
+            map.addLayer(
+                {
+                    'id': 'linestring',
+                    'type': 'line',
+                    'source': 'linestring',
+                    'source-layer': 'linestring', // ここは書き出した layer 名を指定する必要がある
+                    'layout': {
+                        'line-cap': 'round',
+                        'line-join': 'round'
+                    },
+                    'paint': {
+                        'line-opacity': 0.6,
+                        'line-color': 'rgb(53, 175, 109)',
+                        'line-width': 2
+                    }
+                },
+                'waterway-label'
+            );
+        });
+
+        map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
+        map.addControl(new mapboxgl.ScaleControl());
+    </script>
+
+</body>
