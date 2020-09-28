@@ -49,11 +49,12 @@ Generate MVT files
     write_mvt <- function(x) {
       name <- deparse(substitute(x))
       write_sf(
-        x,
+        st_sf(geometry = st_transform(x, 3857)),
         dsn = file.path(data_dir, name),
         layer = name,
         driver = "MVT",
-        dataset_options = c("MINZOOM=4", "MAXZOOM=9", "TILE_EXTENSION=mvt")
+        dataset_options = c("MINZOOM=4", "MAXZOOM=9", "TILE_EXTENSION=mvt", "COMPRESS=NO"),
+        append = TRUE
       )
     }
 
