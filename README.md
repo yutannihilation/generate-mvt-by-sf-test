@@ -82,4 +82,4 @@ Result
 ### Screenshot
 
 ![](./screenshot.png)
-(地理院地図Vector（仮称）提供のベクトルタイルを使用して作成)
+([国土地理院ベクトルタイル](https://github.com/gsi-cyberjapan/vector-tile-experiment)を使用して作成)
