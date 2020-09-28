@@ -53,7 +53,7 @@ Generate MVT files
         dsn = file.path(data_dir, name),
         layer = name,
         driver = "MVT",
-        dataset_options = c("MINZOOM=4", "MAXZOOM=9", "TILE_EXTENSION=mvt")
+        dataset_options = c("MINZOOM=4", "MAXZOOM=9", "TILE_EXTENSION=mvt", "COMPRESS=NO")
       )
     }
 
